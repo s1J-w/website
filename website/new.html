@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthFullForU!</title>
+  <!-- Load Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white font-sans flex flex-col h-screen overflow-hidden">
+
+  <!-- Top Header and Search Bar -->
+  <header class="header">
+    <h1>HealthFullForU!</h1>
+  </header>
+
+  <!-- Main Content Area (Scrollable) -->
+<main class="main-content">
+  <div class="content-padding">
+      
+  <!-- Recommended Dish Section -->
+  <div class="recommended-dish">
+    <div class="dish-icon-group">
+        <i data-lucide="utensils" class="dish-icon"></i>
+        <span class="dish-title">Recommended Dish</span>
+    </div>
+      <!-- scroll down button -->
+    <button class="scroll-button"> 
+        Scroll down <i data-lucide="chevron-down"></i>
+    </button>
+  </div>
+
+    <h2 class="category-header">Ingredients & Categories</h2>
+
+    <!-- Ingredient Categories -->
+    <div class="categories-list" id="categories">
+        
+      <!-- Category Template (Meats) -->
+      <div class="category-panel">
+          <div class="category-title-bar" onclick="toggleCategory('meats')">
+              <h3>meat</h3>
+              <span class="category-info">
+                  Suggested recipes
+                  <i data-lucide="chevron-up" id="icon-meats"></i>
+              </span>
+          </div>
+          <div id="content-meats" class="category-content">
+              <label class="ingredient-label">
+                  <input type="checkbox" class="ingredient-checkbox">
+                  Chicken Breast
+              </label>
+              <label class="ingredient-label">
+                  <input type="checkbox" class="ingredient-checkbox">
+                  Ground Beef (Lean)
+              </label>
+              <label class="ingredient-label">
+                  <input type="checkbox" class="ingredient-checkbox">
+                  Salmon Fillet
+              </label>
+          </div>
+      </div>
+        
+        <!-- Category Template (seafood) -->
+      <div class="category-panel">
+          <div class="category-title-bar" onclick="toggleCategory('seafood')">
+              <h3>seafood</h3>
+              <span class="category-info">
+                  5 items available
+                  <i data-lucide="chevron-up" id="icon-seafood"></i>
+              </span>
+          </div>
+          <div id="content-seafood" class="category-content">
+              <label class="ingredient-label">
+                  <input type="checkbox" class="ingredient-checkbox">
+                  Shrimp
+              </label>
+              <label class="ingredient-label">
+                  <input type="checkbox" class="ingredient-checkbox">
+                  Salmon
+              </label>
+              <label class="ingredient-label">
+                  <input type="checkbox" class="ingredient-checkbox">
+                  Crab
+              </label>
+              <label class="ingredient-label">
+                  <input type="checkbox" class="ingredient-checkbox">
+                  squid
+              </label>
+          </div>
+      </div>
+
+        <!-- Category Template (Vegetables) -->
+      <div class="category-panel">
+          <div class="category-title-bar" onclick="toggleCategory('vegetables')">
+              <h3>Vegetables</h3>
+              <span class="category-info">
+                  12 items available
+                  <i data-lucide="chevron-up" id="icon-vegetables"></i>
+              </span>
+          </div>
+          <div id="content-vegetables" class="category-content">
+              <label class="ingredient-label">
+                  <input type="checkbox" class="ingredient-checkbox">
+                  Spinach
+              </label>
+              <label class="ingredient-label">
+                  <input type="checkbox" class="ingredient-checkbox">
+                  Broccoli
+              </label>
+              <label class="ingredient-label">
+                  <input type="checkbox" class="ingredient-checkbox">
+                  Carrots
+              </label>
+              <label class="ingredient-label">
+                  <input type="checkbox" class="ingredient-checkbox">
+                  Bell Peppers (Mixed)
+              </label>
+          </div>
+      </div>
+
+        <!-- Category Template (Fruits) -->
+      <div class="category-panel">
+          <div class="category-title-bar" onclick="toggleCategory('fruits')">
+              <h3>Fruits</h3>
+              <span class="category-info">
+                  7 items available
+                  <i data-lucide="chevron-up" id="icon-fruits"></i>
+              </span>
+          </div>
+          <div id="content-fruits" class="category-content">
+              <label class="ingredient-label">
+                  <input type="checkbox" class="ingredient-checkbox">
+                  Apples
+              </label>
+              <label class="ingredient-label">
+                  <input type="checkbox" class="ingredient-checkbox">
+                  Bananas
+              </label>
+              <label class="ingredient-label">
+                  <input type="checkbox" class="ingredient-checkbox">
+                  Strawberries
+              </label>
+          </div>
+      </div>
+
+        <!-- Category Template (Dairy) -->
+      <div class="category-panel">
+          <div class="category-title-bar" onclick="toggleCategory('dairy')">
+              <h3>Dairy</h3>
+              <span class="category-info">
+                  5 items available
+                  <i data-lucide="chevron-up" id="icon-dairy"></i>
+              </span>
+          </div>
+          <div id="content-dairy" class="category-content">
+              <label class="ingredient-label">
+                  <input type="checkbox" class="ingredient-checkbox">
+                  Milk
+              </label>
+              <label class="ingredient-label">
+                  <input type="checkbox" class="ingredient-checkbox">
+                  Yogurt
+              </label>
+          </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+  <!-- Bottom Navigation Bar -->
+  <nav class="nav-bar">
+    <div class="nav-content">
+
+        <!-- List -->
+      <div class="nav-icon">
+          <i data-lucide="history"></i>
+          List
+      </div>
+
+      <!-- Menu (Active) -->
+      <div class="nav-icon active">
+              <i data-lucide="list-checks"></i>
+          Menu
+      </div>
+
+      <!-- Favourite -->
+      <div class="nav-icon">
+          <i data-lucide="heart"></i>
+          Favourite
+      </div>
+
+      <!-- Setting -->
+      <div class="nav-icon">
+          <i data-lucide="settings"></i>
+          Setting
+      </div>
+    </div>
+  </nav>
+  <script defer src="script.js"></script>
+</body>
+</html>
