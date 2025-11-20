@@ -10,195 +10,230 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-white font-sans flex flex-col h-screen overflow-hidden">
-
+      
   <!-- Top Header and Search Bar -->
   <header class="header">
-    <h1>HealthFullForU!</h1>
+      <h1>HealthFullForU!</h1>
   </header>
 
   <!-- Main Content Area (Scrollable) -->
-<main class="main-content">
-  <div class="content-padding">
-      
-  <!-- Recommended Dish Section -->
-  <div class="recommended-dish">
-    <div class="dish-icon-group">
-        <i data-lucide="utensils" class="dish-icon"></i>
-        <span class="dish-title">Recommended Dish</span>
+  <main class="main-content">
+
+  <!-- Tab Content Container -->
+  <div id="tab-content-container">
+
+    <!-- 1. Menu Tab Content (Initial View) -->
+    <div id="content-menu" class="tab-content active-tab">
+      <!-- Content Padding -->
+      <div>
+        <!-- Recommended Dish Section -->
+        <div class="recommended-dish">
+          <div class="dish-icon-group">
+            <i data-lucide="utensils" class="dish-icon"></i>
+            <span class="dish-title">Recommended Dish</span>
+        </div>
+        <button class="scroll-button">
+            Scroll down <i data-lucide="chevron-down"></i>
+        </button>
     </div>
-      <!-- scroll down button -->
-    <button class="scroll-button"> 
-        Scroll down <i data-lucide="chevron-down"></i>
-    </button>
-  </div>
 
     <h2 class="category-header">Ingredients & Categories</h2>
 
     <!-- Ingredient Categories -->
     <div class="categories-list" id="categories">
-        
+      
       <!-- Category Template (Meats) -->
       <div class="category-panel">
-          <div class="category-title-bar" onclick="toggleCategory('meats')">
-              <h3>meat</h3>
-              <span class="category-info">
-                  Suggested recipes
-                  <i data-lucide="chevron-up" id="icon-meats"></i>
-              </span>
-          </div>
-          <div id="content-meats" class="category-content">
-              <label class="ingredient-label">
-                  <input type="checkbox" class="ingredient-checkbox">
-                  Chicken Breast
-              </label>
-              <label class="ingredient-label">
-                  <input type="checkbox" class="ingredient-checkbox">
-                  Ground Beef (Lean)
-              </label>
-              <label class="ingredient-label">
-                  <input type="checkbox" class="ingredient-checkbox">
-                  Salmon Fillet
-              </label>
-          </div>
+        <div class="category-title-bar" onclick="toggleCategory('meats')">
+          <h3>Meats</h3>
+            <span class="category-info">
+              Suggested recipes
+              <i data-lucide="chevron-down" id="icon-meats"></i>
+            </span>
+        </div>
+        <div id="content-meats" class="category-content">
+          <label class="ingredient-label">
+            <input type="checkbox" class="ingredient-checkbox">
+            Chicken Breast
+          </label>
+          <label class="ingredient-label">
+            <input type="checkbox" class="ingredient-checkbox">
+            Ground Beef (Lean)
+          </label>
+          <label class="ingredient-label">
+            <input type="checkbox" class="ingredient-checkbox">
+            Salmon Fillet
+          </label>
+        </div>
       </div>
-        
-        <!-- Category Template (seafood) -->
+                      
+      <!-- Category Template (seafood) -->
       <div class="category-panel">
-          <div class="category-title-bar" onclick="toggleCategory('seafood')">
-              <h3>seafood</h3>
-              <span class="category-info">
-                  5 items available
-                  <i data-lucide="chevron-up" id="icon-seafood"></i>
-              </span>
-          </div>
-          <div id="content-seafood" class="category-content">
-              <label class="ingredient-label">
-                  <input type="checkbox" class="ingredient-checkbox">
-                  Shrimp
-              </label>
-              <label class="ingredient-label">
-                  <input type="checkbox" class="ingredient-checkbox">
-                  Salmon
-              </label>
-              <label class="ingredient-label">
-                  <input type="checkbox" class="ingredient-checkbox">
-                  Crab
-              </label>
-              <label class="ingredient-label">
-                  <input type="checkbox" class="ingredient-checkbox">
-                  squid
-              </label>
-          </div>
+        <div class="category-title-bar" onclick="toggleCategory('seafood')">
+          <h3>seafood</h3>
+          <span class="category-info">
+            5 items available
+            <i data-lucide="chevron-down" id="icon-seafood"></i>
+          </span>
       </div>
-
-        <!-- Category Template (Vegetables) -->
-      <div class="category-panel">
-          <div class="category-title-bar" onclick="toggleCategory('vegetables')">
-              <h3>Vegetables</h3>
-              <span class="category-info">
-                  12 items available
-                  <i data-lucide="chevron-up" id="icon-vegetables"></i>
-              </span>
-          </div>
-          <div id="content-vegetables" class="category-content">
-              <label class="ingredient-label">
-                  <input type="checkbox" class="ingredient-checkbox">
-                  Spinach
-              </label>
-              <label class="ingredient-label">
-                  <input type="checkbox" class="ingredient-checkbox">
-                  Broccoli
-              </label>
-              <label class="ingredient-label">
-                  <input type="checkbox" class="ingredient-checkbox">
-                  Carrots
-              </label>
-              <label class="ingredient-label">
-                  <input type="checkbox" class="ingredient-checkbox">
-                  Bell Peppers (Mixed)
-              </label>
-          </div>
+        <div id="content-seafood" class="category-content">
+          <label class="ingredient-label">
+            <input type="checkbox" class="ingredient-checkbox">
+            Shrimp
+          </label>
+          <label class="ingredient-label">
+            <input type="checkbox" class="ingredient-checkbox">
+            Salmon
+          </label>
+          <label class="ingredient-label">
+            <input type="checkbox" class="ingredient-checkbox">
+            Crab
+          </label>
+          <label class="ingredient-label">
+            <input type="checkbox" class="ingredient-checkbox">
+            squid
+          </label>
+        </div>
       </div>
-
-        <!-- Category Template (Fruits) -->
-      <div class="category-panel">
-          <div class="category-title-bar" onclick="toggleCategory('fruits')">
-              <h3>Fruits</h3>
-              <span class="category-info">
-                  7 items available
-                  <i data-lucide="chevron-up" id="icon-fruits"></i>
-              </span>
-          </div>
-          <div id="content-fruits" class="category-content">
-              <label class="ingredient-label">
-                  <input type="checkbox" class="ingredient-checkbox">
-                  Apples
-              </label>
-              <label class="ingredient-label">
-                  <input type="checkbox" class="ingredient-checkbox">
-                  Bananas
-              </label>
-              <label class="ingredient-label">
-                  <input type="checkbox" class="ingredient-checkbox">
-                  Strawberries
-              </label>
-          </div>
+      
+    <!-- Category Template (Vegetables) -->
+    <div class="category-panel">
+      <div class="category-title-bar" onclick="toggleCategory('vegetables')">
+        <h3>Vegetables</h3>
+        <span class="category-info">
+          12 items available
+          <i data-lucide="chevron-down" id="icon-vegetables"></i>
+        </span>
       </div>
-
-        <!-- Category Template (Dairy) -->
-      <div class="category-panel">
-          <div class="category-title-bar" onclick="toggleCategory('dairy')">
+    <div id="content-vegetables" class="category-content">
+        <label class="ingredient-label">
+          <input type="checkbox" class="ingredient-checkbox">
+          Spinach
+        </label>
+        <label class="ingredient-label">
+          <input type="checkbox" class="ingredient-checkbox">
+          Broccoli
+        </label>
+        <label class="ingredient-label">
+          <input type="checkbox" class="ingredient-checkbox">
+        <label class="ingredient-label">
+          <input type="checkbox" class="ingredient-checkbox">
+          Bell Peppers (Mixed)
+        </label>
+      </div>
+    </div>
+    
+    <!-- Category Template (Fruits) -->
+    <div class="category-panel">
+      <div class="category-title-bar" onclick="toggleCategory('fruits')">
+        <h3>Fruits</h3>
+        <span class="category-info">
+          7 items available
+          <i data-lucide="chevron-down" id="icon-fruits"></i>
+        </span>
+    </div>
+    <div id="content-fruits" class="category-content">
+        <label class="ingredient-label">
+          <input type="checkbox" class="ingredient-checkbox">
+          Apples
+        </label>
+        <label class="ingredient-label">
+          <input type="checkbox" class="ingredient-checkbox">
+          Bananas
+        </label>
+        <label class="ingredient-label">
+          <input type="checkbox" class="ingredient-checkbox">
+          Strawberries
+        </label>
+      </div>
+    </div>
+    
+          <!-- Category Template (Dairy) -->
+          <div class="category-panel">
+            <div class="category-title-bar" onclick="toggleCategory('dairy')">
               <h3>Dairy</h3>
               <span class="category-info">
-                  5 items available
-                  <i data-lucide="chevron-up" id="icon-dairy"></i>
+                5 items available
+                <i data-lucide="chevron-down" id="icon-dairy"></i>
               </span>
-          </div>
-          <div id="content-dairy" class="category-content">
+            </div>
+            <div id="content-dairy" class="category-content">
               <label class="ingredient-label">
-                  <input type="checkbox" class="ingredient-checkbox">
-                  Milk
-              </label>
+                <input type="checkbox" class="ingredient-checkbox">
+                Milk
+                </label>
               <label class="ingredient-label">
-                  <input type="checkbox" class="ingredient-checkbox">
-                  Yogurt
+                <input type="checkbox" class="ingredient-checkbox">
+                Yogurt
               </label>
+            </div>
           </div>
+        </div>
       </div>
+    </div> <!-- End of content-menu -->
 
-    </div>
+      <!-- เปลี่ยนหน้า -->
+       
+      <!-- 2. List Tab Content (Placeholder) -->
+      <div id="content-list" class="tab-content">
+      <div class="placeholder-content">
+        <i data-lucide="history" class="placeholder-icon"></i>
+        <h2>Shopping List History</h2>
+        <p>This section will display your saved and previous shopping lists.</p>
+      </div>
+    </div> <!-- End of content-list -->
+  
+    <!-- 3. Favorite Tab Content (Placeholder) -->
+    <div id="content-favorite" class="tab-content">
+      <div class="placeholder-content">
+        <i data-lucide="heart" class="placeholder-icon" style="color: var(--primary-red);"></i>
+        <h2>Favorite Dishes</h2>
+        <p>Mark your preferred recipes and ingredients here for quick access.</p>
+      </div>
+    </div> <!-- End of content-favorite -->
+
+    <!-- 4. Settings Tab Content (Placeholder) -->
+    <div id="content-settings" class="tab-content">
+      <div class="placeholder-content">
+        <i data-lucide="settings" class="placeholder-icon"></i>
+        <h2>App Settings</h2>
+        <p>Manage your profile, preferences, and notifications here.</p>
+      </div>
+    </div> <!-- End of content-settings -->
   </div>
 </main>
 
-  <!-- Bottom Navigation Bar -->
-  <nav class="nav-bar">
-    <div class="nav-content">
+<!-- Bottom Navigation Bar -->
+<nav class="nav-bar">
+  <div class="nav-content">
 
-        <!-- List -->
-      <div class="nav-icon">
-          <i data-lucide="history"></i>
-          List
-      </div>
-
-      <!-- Menu (Active) -->
-      <div class="nav-icon active">
-              <i data-lucide="list-checks"></i>
-          Menu
-      </div>
-
-      <!-- Favourite -->
-      <div class="nav-icon">
-          <i data-lucide="heart"></i>
-          Favourite
-      </div>
-
-      <!-- Setting -->
-      <div class="nav-icon">
-          <i data-lucide="settings"></i>
-          Setting
-      </div>
+    <!-- List -->
+    <div class="nav-icon" data-tab="list" onclick="toggleTab('list')">
+      <i data-lucide="history"></i>
+        List
     </div>
-  </nav>
+
+    <!-- Menu (Active) -->
+    <div class="nav-icon active" data-tab="menu" onclick="toggleTab('menu')">
+      <i data-lucide="list-checks"></i>
+        Menu
+    </div>
+
+    <!-- Favourite -->
+    <div class="nav-icon" data-tab="favorite" onclick="toggleTab('favorite')">
+      <i data-lucide="heart"></i>
+        Favourite
+    </div>
+
+    <!-- Setting -->
+    <div class="nav-icon" data-tab="settings" onclick="toggleTab('settings')">
+      <i data-lucide="settings"></i>
+        Setting
+    </div>
+  </div>
+</nav>
+
   <script defer src="script.js"></script>
+
 </body>
 </html>
